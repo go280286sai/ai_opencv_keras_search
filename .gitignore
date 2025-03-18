@@ -1,0 +1,8 @@
+.venv
+.idea
+yolov3.weights
+yolov3.cfg
+coco.names
+data
+screenshots
+img
