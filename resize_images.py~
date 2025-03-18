@@ -1,0 +1,20 @@
+from PIL import Image
+import os
+
+def resize_images(folder_path, target_size=(224, 224)):
+    for filename in os.listdir(folder_path):
+        img_path = os.path.join(folder_path, filename)
+        if img_path.endswith(('.jpg', '.jpeg', '.png')):
+            with Image.open(img_path) as img:
+                img_resized = img.resize(target_size)
+                img_resized.save(img_path)
+                print(f"{filename} resized to {target_size}")
+
+# Пути к папкам с изображениями
+# crash_folder = "img/crash"
+no_crash_folder = "result"
+# no_crash_folder = "img/no_crash"
+
+# Снижение целевого размера изображений
+# resize_images(crash_folder)
+resize_images(no_crash_folder)
